@@ -1,0 +1,141 @@
+mat-card {
+    width: 550px;
+    height: 60vh;
+    margin-top: 1%;
+
+    &:first-child {
+        margin-left: 10%;
+    }
+
+    margin-left: 0%;
+    border-top-left-radius: 10cm;
+}
+
+mat-card-header {
+    border: solid 1px black;
+    border-top-left-radius: 10cm;
+    border-top-right-radius: 10cm;
+}
+
+.deletebt {
+   
+    height: 100px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: rgba(255, 255, 255, 0);
+}
+
+mat-card-content {
+    border: solid 1px black;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    display: flow-root;
+}
+mat-icon {
+    height: 30px;
+    margin-top: 10%;
+}
+
+.MatIconDoneBt {
+    margin-top: 15%;
+    background-color: rgba(128, 128, 128, 0.568);
+    color: white;
+    height: 40px;
+    width: 40px;
+}
+.mat-card-header1 {
+    background-color: red;
+}
+
+.mat-card-header2 {
+    background-color: green;
+
+}
+
+p {
+    font-size: 14px;
+    font-style: italic;
+    color: red;
+}
+
+.maindiv {
+    margin-left: 5%;
+    display: flex;
+}
+
+.todoTimeAndtodoItem {
+    display: flex;
+}
+
+.icobt-container {
+    display: flex;
+    margin-left: 1%;
+    margin-top: 100px;
+}
+
+.CreateTodoBt {
+    margin-top: 2%;
+    height: 46px;
+    width: 70px;
+    background-color: #ffb3fba9;
+
+}
+
+.CreateNewTodoInput {
+    height: 30px;
+    width: 200px;
+    display: block;
+
+}
+
+.CreateNewTodoInputs {
+    margin-top: 40%;
+
+}
+
+.NewTodoForm {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(240, 159, 204);
+    visibility: hidden;
+}
+
+.CreateNewTodo-container {
+    margin-top: 5%;
+    margin-left: 5%;
+    display: block;
+}
+
+.todo {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.MatIconDelete {
+    transform: scale(2);
+    color: red;
+    &:hover{
+     transform: scale(2.1);
+    }
+}
+
+
+
+.addTodoBt {
+    &:hover {
+        background-color: rgb(189, 52, 109);
+
+    }
+
+    margin-left: 10%;
+    margin-top: 2%;
+    height: 50px;
+    width: 50px;
+    font-size: 35px;
+    border: solid 2px rgb(122, 120, 120);
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(231, 78, 142);
+}
