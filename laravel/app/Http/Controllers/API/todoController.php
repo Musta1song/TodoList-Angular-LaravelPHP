@@ -45,8 +45,8 @@ class todoController extends Controller
   {
     $post = todo::find($id);
     $post->delete();
-    return redirect()->route('posts.index')
-      ->with('success', 'Post deleted successfully');
+    return redirect()->route('todo.index')
+      ->with('success', 'todo deleted successfully');
   }
   
   }
