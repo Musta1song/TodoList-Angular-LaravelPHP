@@ -4,14 +4,14 @@ import { RouterOutlet } from '@angular/router';
 import { MatCardModule } from '@angular/material/card'
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule, } from '@angular/material/button'
-import { DeleteService } from './delete.service';
-import { TodoList } from './todo-list';
+import { DeleteService } from './services/delete-service/delete.service';
+import { TodoList } from './classes/todo-list';
 import { OnInit } from '@angular/core';
-import { GetTodoListService } from './get-todo-list.service';
-import { PostService } from './post.service';
+import { GetTodoListService } from './services/get-service/get-todo-list.service';
+import { PostService } from './services/post-service/post.service';
 import { FormsModule } from '@angular/forms';
-import { MarkTodoAsDoneService } from './mark-todo-as-done.service';
-import { TodoListPage2 } from './todo-list-page2';
+import { MarkTodoAsDoneService } from './services/mark-todo-as-done-service/mark-todo-as-done.service';
+import { TodoListPage2 } from './classes/todo-list-page2';
 import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
