@@ -10,7 +10,7 @@ export class MarkTodoAsDoneService {
 
   constructor(private http: HttpClient){}
 
-  private baseUrl = "http://127.0.0.1:8080/api/todos";
+  private baseUrl = "http://127.0.0.1:8000/api/todos";
 
   updateTodo(id?: any): Observable<Object> {
     return this.http.put<any>(

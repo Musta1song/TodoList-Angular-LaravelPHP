@@ -12,7 +12,7 @@ export class PostService {
   constructor(private http: HttpClient) { this.deleteReq = this.CreateNewTodo(new TodoList); }
   deleteReq: Observable<any>;
 
-  private baseUrl = "http://127.0.0.1:8080/api/todos";
+  private baseUrl = "http://127.0.0.1:8000/api/todos";
 
   CreateNewTodo(todos: TodoList): Observable<Object> {
     {
