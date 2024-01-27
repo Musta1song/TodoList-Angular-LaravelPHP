@@ -12,7 +12,7 @@ import { PostService } from './services/post-service/post.service';
 import { FormsModule } from '@angular/forms';
 import { MarkTodoAsDoneService } from './services/mark-todo-as-done-service/mark-todo-as-done.service';
 import { TodoListPage2 } from './classes/todo-list-page2';
-import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, DragDropModule, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -36,16 +36,13 @@ export class AppComponent implements OnInit {
   id!: number
 
 
-  drop(event: CdkDragDrop<any[]>) {
+  CdkDragDropEvent(event: CdkDragDrop<any[]>) {
     if (event.previousContainer !== event.container) {
-    
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
       document.getElementById("matbt")!.style.backgroundColor = "green"
-
-
     }
   }
 
@@ -59,17 +56,20 @@ export class AppComponent implements OnInit {
     for (let i of this.done) {
       if (i.isDone != true)
         this.isDoneService.updateTodo(i.id).subscribe();
-        window.location.reload()
-
     }
+    for (let i of this.todo)
+      if (i.isDone === true) {
+        this.isDoneService.undoTodo(i.id).subscribe();
+      }
 
+    window.location.reload()
   }
   ngOnInit(): void {
     this.getTodoListService.GetTodoList().subscribe((data: TodoList[]) => {
       console.log(data);
       this.todolist = data;
-      this.sort(this.todolist)
-      this.sortByIsDone(this.todolist)
+      this.sortTodosByTime(this.todolist)
+      this.sortTodosByIsDone(this.todolist)
     });
   }
   getTimeArr(arr: any[]) {
@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
     return timeArr
   }
 
-  sort(arr: any[]) {
+  sortTodosByTime(arr: any[]) {
     let timeArr: any[] = this.getTimeArr(arr);
     let size = arr.length;
     let minIndex;
@@ -103,7 +103,7 @@ export class AppComponent implements OnInit {
     }
     return arr;
   }
-  sortByIsDone(arr: any[]) {
+  sortTodosByIsDone(arr: any[]) {
     let done: any = []
     let todo: any = []
 
@@ -120,32 +120,24 @@ export class AppComponent implements OnInit {
     this.todo = todo
   }
 
-
-
   RadioEvent(event: any) {
     this.id = event.target.value;
     console.log(this.id)
   }
 
-
-  // Example usage:
   CreateNewTodo() {
     if (this.todos.todo == null) {
       document.getElementById("todoerr")!.innerHTML = "Geben Sie eine Aufgabe ein!"
     }
     else if(this.todos.time == null){
       document.getElementById("todoerr")!.innerHTML = "Geben Sie eine Uhrzeit ein!"
-
     }
-
     else {
-      this.todos.isDone = false
       this.postService.CreateNewTodo(this.todos).subscribe();
       window.location.reload()
-
     }
   }
-  MakeTodoFormVisible() {
+  MakeFormVisible() {
     const NewTodoForm = document.getElementById("NewTodoForm");
     NewTodoForm!.style.visibility = "visible";
 
