@@ -1,0 +1,41 @@
+mat-card {
+    width: 500px;
+}
+mat-card-header{
+    height: 40px;
+}
+.h-90{
+    height: 100px;
+}
+
+.open-matcard-header {
+    background-color: rgb(255, 233, 111);
+}
+.done-matcard-header{
+    background-color: rgb(72, 248, 72);
+}
+body {
+    display: flex;
+}
+
+mat-card-content{
+    height: 50px;
+    border: 1px solid;
+}
+.MatIconDelete,.deletebt{
+    max-height: 22px;
+    height: 22px;
+    width: 20px;
+    margin-bottom: 10px;
+    margin: 0;
+
+    color: rgb(243, 140, 140);
+}
+.MatIconDoneBt,.doneicon{
+    background-color: greenyellow;
+    height: 40px;
+    margin-left: 10px;
+    
+}
+.MatIconDoneBt{visibility: hidden;}
+

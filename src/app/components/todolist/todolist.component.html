@@ -1,0 +1,34 @@
+<div class="flex justify-center" cdkDropListGroup>
+    <mat-card class="mr-10">
+        <mat-card-header class="open-matcard-header"> offene Todos</mat-card-header>
+        <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of todo">
+                <mat-card-content cdkDrag>
+                    {{item.time}} <span class="float-right">
+                        <button (click)="deleteTodo(item.id)" class="deletebt" title="Todo löschen">
+                            <mat-icon class="MatIconDelete">delete</mat-icon>
+                        </button></span> <span class="float-right"> {{ item.todo}} </span>
+                </mat-card-content>
+            </div>
+        </div>
+    </mat-card>
+
+    <mat-card class="ml-0">
+        <mat-card-header class="done-matcard-header">Erlerdigte Todos</mat-card-header>
+        <div cdkDropList [cdkDropListData]="done" class="h-90" (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of done">
+                <mat-card-content cdkDrop>
+                    {{item.time}} <span class="float-right">
+                        <button (click)="deleteTodo(item.id)" class="deletebt" title="Todo löschen">
+                            <mat-icon class="MatIconDelete">delete</mat-icon>
+                        </button></span> <span class="float-right"> {{ item.todo}} </span>
+                </mat-card-content>
+
+            </div>
+        </div>
+    </mat-card>
+
+    <button mat-button id="matbt" class="MatIconDoneBt" title="Änderungen bestätigen" (click)="markTodoAsDone()">
+        <mat-icon class="doneicon">done</mat-icon>
+    </button><br>
+</div>

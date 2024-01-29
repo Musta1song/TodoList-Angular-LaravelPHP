@@ -1,0 +1,21 @@
+<div class="flex justify-center">
+    <div class="block">
+        <mat-form-field appearance="fill">
+            <mat-label>Todo *</mat-label>
+            <input matInput type="text" placeholder="Todo" [(ngModel)]="todos.todo">
+            <mat-icon matSuffix>create</mat-icon>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Uhrzeit</mat-label>
+            <input matInput type="time" class="example-right-align" placeholder="placeholder" [(ngModel)]="todos.time">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        
+        <br>
+
+        <button mat-button (click)="CreateNewTodo()"> <mat-icon class="maticon">send</mat-icon> </button>
+    </div>
+</div>
