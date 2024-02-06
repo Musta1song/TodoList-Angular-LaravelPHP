@@ -5,7 +5,7 @@ mat-card-header{
     height: 40px;
 }
 .h-90{
-    height: 100px;
+    height: 50px;
 }
 
 .open-matcard-header {
@@ -31,11 +31,13 @@ mat-card-content{
 
     color: rgb(243, 140, 140);
 }
-.MatIconDoneBt,.doneicon{
+.MatIconDoneBt{
     background-color: greenyellow;
     height: 40px;
     margin-left: 10px;
+    visibility: hidden;
     
 }
-.MatIconDoneBt{visibility: hidden;}
-
+.doneicon{
+    margin-left: 10px;
+}

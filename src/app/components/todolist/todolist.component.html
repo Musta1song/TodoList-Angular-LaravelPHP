@@ -1,6 +1,6 @@
-<div class="flex justify-center" cdkDropListGroup>
+<div class="flex justify-center mt-10" cdkDropListGroup>
     <mat-card class="mr-10">
-        <mat-card-header class="open-matcard-header"> offene Todos</mat-card-header>
+        <mat-card-header class="open-matcard-header"> Offene Todos</mat-card-header>
         <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
             <div *ngFor="let item of todo">
                 <mat-card-content cdkDrag>
