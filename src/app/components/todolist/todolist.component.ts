@@ -10,6 +10,7 @@ import { OnInit } from '@angular/core';
 import { GetTodoListService } from '../../services/get-service/get-todo-list.service';
 import { FormsModule } from '@angular/forms';
 import { MarkTodoAsDoneService } from '../../services/mark-todo-as-done-service/mark-todo-as-done.service';
+import moment from 'moment';
 import {
   CdkDragDrop,
   CdkDrag,
@@ -20,7 +21,6 @@ import {
   DragDropModule
 } from '@angular/cdk/drag-drop';
 
-import { TodoListPage2 } from '../../classes/todo-list-page2';
 
 
 @Component({
@@ -34,8 +34,8 @@ import { TodoListPage2 } from '../../classes/todo-list-page2';
 export class TodolistComponent implements OnInit {
 
   title = 'AtodoNew';
-  done!: TodoListPage2[];
-  todo!: TodoListPage2[];
+  done!: TodoList[];
+  todo!: TodoList[];
 
   constructor(
     public deleteService: DeleteService,
@@ -66,7 +66,12 @@ export class TodolistComponent implements OnInit {
     this.deleteService.deleteTodo(ID).subscribe();
     setTimeout(this.reload, 500
 
-      ) 
+    )
+  }
+  formatTime(time: any) {
+    time = moment().format('LT');   // 8:20 PM
+    return time
+
   }
 
   markTodoAsDone() {
@@ -78,7 +83,7 @@ export class TodolistComponent implements OnInit {
 
     )
   }
-  reload(){
+  reload() {
     window.location.reload()
   }
   ngOnInit(): void {

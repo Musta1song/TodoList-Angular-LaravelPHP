@@ -4,10 +4,10 @@
         <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
             <div *ngFor="let item of todo">
                 <mat-card-content cdkDrag>
-                    {{item.time}} <span class="float-right">
+                    {{formatTime(item.time)}}<span class="float-right">
                         <button (click)="deleteTodo(item.id)" class="deletebt" title="Todo löschen">
                             <mat-icon class="MatIconDelete">delete</mat-icon>
-                        </button></span> <span class="float-right"> {{ item.todo}} </span>
+                        </button></span> <span class="float-center"> {{ item.todo}} </span>
                 </mat-card-content>
             </div>
         </div>
@@ -18,10 +18,10 @@
         <div cdkDropList [cdkDropListData]="done" class="h-90" (cdkDropListDropped)="drop($event)">
             <div *ngFor="let item of done">
                 <mat-card-content cdkDrop>
-                    {{item.time}} <span class="float-right">
+                    {{formatTime(item.time)}} <span class="float-right">
                         <button (click)="deleteTodo(item.id)" class="deletebt" title="Todo löschen">
                             <mat-icon class="MatIconDelete">delete</mat-icon>
-                        </button></span> <span class="float-right"> {{ item.todo}} </span>
+                        </button></span> <span class="float-center"> {{ item.todo}} </span>
                 </mat-card-content>
 
             </div>
