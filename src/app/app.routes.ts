@@ -9,7 +9,7 @@ export const routes: Routes = [
         component: TodolistComponent
       },
       {
-        path: 'addtodo',
+        path: 'addTodo',
         component: AddtodoComponent
       }
 ];

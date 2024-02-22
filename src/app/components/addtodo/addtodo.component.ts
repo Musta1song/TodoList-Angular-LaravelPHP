@@ -14,7 +14,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-addtodo',
   standalone: true,
-  imports: [MatInputModule, MatIconModule, MatFormFieldModule, FormsModule, MatButtonModule, CommonModule,RouterOutlet],
+  imports: [MatInputModule, MatIconModule, MatFormFieldModule, FormsModule, MatButtonModule, CommonModule, RouterOutlet],
   templateUrl: './addtodo.component.html',
   styleUrl: './addtodo.component.scss'
 })
@@ -25,20 +25,21 @@ export class AddtodoComponent {
 
 
   CreateNewTodo() {
-    if (this.todos.todo === null && this.todos.time !== null) {
-      alert("Geben Sie eine Aufgabe ein!");
-    }
-    else if (this.todos.time == null && this.todos.todo !== null) {
-      alert("Geben Sie eine Uhrzeit ein!");
-    }
-    else if (this.todos.time === null && this.todos.todo === null) {
+    if (this.todos.time == null) {
+      if (this.todos.todo != null) {
+        alert("Geben Sie eine Uhrzeit ein!");
+        return
+      }
       alert("Geben Sie eine Aufgabe und eine Uhrzeit ein!");
+      return
     }
-    else {
-      this.todos.isDone = false
-      this.postService.CreateNewTodo(this.todos).subscribe();
-      window.location.reload()
+    if (this.todos.todo == null) {
+      alert("Geben Sie eine Aufgabe ein!");
+      return
+    }
+    this.todos.isDone = false
+    this.postService.CreateNewTodo(this.todos).subscribe();
+    alert("Todo wurde erstellt!")
 
-    }
   }
 }

@@ -64,9 +64,7 @@ export class TodolistComponent implements OnInit {
   }
   deleteTodo(ID: any) {
     this.deleteService.deleteTodo(ID).subscribe();
-    setTimeout(this.reload, 500
-
-    )
+    setTimeout(this.reload, 500)
   }
   formatTime(time: any) {
     time = moment().format('LT');   // 8:20 PM
@@ -79,9 +77,7 @@ export class TodolistComponent implements OnInit {
       if (i.isDone != true)
         this.isDoneService.updateTodo(i.id).subscribe();
     }
-    setTimeout(this.reload, 500
-
-    )
+    setTimeout(this.reload, 500)
   }
   reload() {
     window.location.reload()
