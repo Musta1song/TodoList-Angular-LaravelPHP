@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+
 import { MatCardModule } from '@angular/material/card'
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule, } from '@angular/material/button'
@@ -11,6 +12,8 @@ import { GetTodoListService } from '../../services/get-service/get-todo-list.ser
 import { FormsModule } from '@angular/forms';
 import { MarkTodoAsDoneService } from '../../services/mark-todo-as-done-service/mark-todo-as-done.service';
 import moment from 'moment';
+import 'moment/locale/de';
+
 import {
   CdkDragDrop,
   CdkDrag,
@@ -67,8 +70,11 @@ export class TodolistComponent implements OnInit {
     setTimeout(this.reload, 500)
   }
   formatTime(time: any) {
-    time = moment().format('LT');   // 8:20 PM
-    return time
+    let local = moment()
+    local.locale('de');  
+    let MomentTime = local.format('LT')      // en
+
+    return MomentTime     // de
 
   }
 
