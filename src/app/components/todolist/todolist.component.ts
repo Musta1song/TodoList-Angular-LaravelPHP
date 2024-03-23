@@ -61,7 +61,7 @@ export class TodolistComponent implements OnInit {
         event.currentIndex,
 
       );
-      document.getElementById("matbt")!.style.visibility = "visible"
+      this.markTodoAsDone()
 
     }
   }
@@ -71,7 +71,7 @@ export class TodolistComponent implements OnInit {
   }
   formatTime(time: any) {
     let local = moment()
-    local.locale('de');  
+    local.locale('de');
     let MomentTime = local.format('LT')      // en
 
     return MomentTime     // de

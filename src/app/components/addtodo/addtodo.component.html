@@ -1,24 +1,25 @@
 <div class="flex justify-center">
     <div class="block mt-10">
-        <h1 > Todo hinzufügen:</h1>
-<div class="mt-4">
-        <mat-form-field appearance="fill">
-            <mat-label>Todo *</mat-label>
-            <input matInput type="text" placeholder="Todo" [(ngModel)]="todos.todo">
-            <mat-icon matSuffix>create</mat-icon>
-        </mat-form-field>
+        <h1> Todo erstellen</h1>
+        <div class="mt-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Todo *</mat-label>
+                <input matInput type="text" placeholder="Todo" [(ngModel)]="todos.todo">
+                <mat-icon matSuffix>create</mat-icon>
+            </mat-form-field>
 
-        <br>
+            <br>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Uhrzeit *</mat-label>
-            <input matInput type="time" class="example-right-align" placeholder="placeholder" [(ngModel)]="todos.time">
-            <mat-icon matSuffix>access_alarm</mat-icon>
-        </mat-form-field>
-        
-        <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Uhrzeit *</mat-label>
+                <input matInput type="time" class="example-right-align" placeholder="placeholder"
+                    [(ngModel)]="todos.time">
+                <mat-icon matSuffix>access_alarm</mat-icon>
+            </mat-form-field>
 
-        <button mat-button (click)="CreateNewTodo()"> <mat-icon class="maticon">send</mat-icon> </button>
-    </div>
+            <br>
+
+            <button class="float-right mr-2" mat-button (click)="CreateNewTodo()"> <mat-icon class="maticon">send</mat-icon> </button>
+        </div>
     </div>
 </div>

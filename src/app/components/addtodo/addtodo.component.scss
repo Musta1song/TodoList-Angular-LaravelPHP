@@ -1,15 +1,19 @@
-p{
+p {
     max-width: 200px;
 }
-mat-form-field{
-    max-width: 200px;
-}
-h1
-{
-font-size: 20px;}
 
-button{
-    background-color: rgb(69, 207, 51);
+mat-form-field {
+    max-width: 200px;
+}
+
+h1 {
+    font-size: 20px;
+    color: rgb(88, 169, 87);
+    margin-left: 30px;
+}
+
+button {
+    background-color: rgb(88, 169, 87);
     width: 50px;
     height: 40px;
 }

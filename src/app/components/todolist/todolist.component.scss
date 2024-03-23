@@ -1,28 +1,46 @@
 mat-card {
     width: 500px;
     border: 1px solid rgb(218, 213, 213);
-}
-mat-card-header{
-    height: 40px;
-}
-.h-90{
-    height: 50px;
+    border-radius: 24px;
+    min-height: 100px;
+
 }
 
-.open-matcard-header {
-    background-color: rgb(255, 233, 111);
+mat-card-header {
+    height: 40px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+
 }
-.done-matcard-header{
+
+mat-card-content {
+    min-height: 50px;
+}
+
+.doneContent {
+    border-top: 1px solid greenyellow;
+
+}
+.cdkDropList{
+    min-height: 50px;
+}
+
+.openContent {
+    border-top: 1px solid plum;
+
+}
+
+
+
+.done-matcard-header {
     background-color: rgb(72, 248, 72);
 }
-body {
-    display: flex;
-}
 
-mat-card-content{
-    height: 50px;
-}
-.MatIconDelete,.deletebt{
+
+
+
+.MatIconDelete,
+.deletebt {
     max-height: 22px;
     height: 22px;
     width: 20px;
@@ -31,13 +49,17 @@ mat-card-content{
 
     color: rgb(243, 140, 140);
 }
-.MatIconDoneBt{
+
+.matDoneBt {
     background-color: greenyellow;
     height: 40px;
     margin-left: 10px;
     visibility: hidden;
-    
+    font-size: 27px;
 }
-.doneicon{
+
+.doneicon {
     margin-left: 10px;
+    font-size: 3100px;
+
 }
